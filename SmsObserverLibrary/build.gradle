@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 27
@@ -8,7 +9,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -22,3 +23,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
 }
+
+publish {
+    userOrg = 'lastdeity'//bintray.com用户名
+    repoName = 'Android-lib'//默认的仓库名称
+    groupId = 'com.mengya'//jcenter上的路径
+    artifactId = 'smsobserver'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'a library for hook sms'
+    website = 'https://github.com/MeDeity/SmsObserverForAndroid'
+}
+
