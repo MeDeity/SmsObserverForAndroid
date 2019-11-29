@@ -12,9 +12,9 @@ public interface SmsResponseCallback {
 	
 	/**
 	 * 返回短信内容
-	 * 
-	 * @param smsContent
+	 * @param address 短信来源
+	 * @param smsContent 短信内容
 	 * @see [类、类#方法、类#成员]
 	 */
-	void onCallbackSmsContent(String smsContent);
+	void onCallbackSmsContent(String address,String smsContent);
 }

@@ -13,7 +13,6 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.robin.lazy.sms.SmsObserver;
 import com.robin.lazy.sms.SmsResponseCallback;
-import com.robin.lazy.sms.VerificationCodeSmsFilter;
 
 public class MainActivity extends AppCompatActivity implements SmsResponseCallback{
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements SmsResponseCallba
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        smsObserver=new SmsObserver(this,this,new VerificationCodeSmsFilter("180"));
+        smsObserver=new SmsObserver(this,this);
         smsObserver.registerSMSObserver();
         textView=(TextView)findViewById(R.id.textView);
         Dexter.withActivity(this)
@@ -36,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements SmsResponseCallba
     }
 
     @Override
-    public void onCallbackSmsContent(String code) {
-        textView.setText("短信验证码:"+code);
+    public void onCallbackSmsContent(String address,String smsContent) {
+        textView.setText("短信内容:"+smsContent);
     }
 
     @Override
