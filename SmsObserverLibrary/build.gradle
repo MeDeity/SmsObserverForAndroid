@@ -9,7 +9,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.1.0"
     }
     buildTypes {
         release {
@@ -29,7 +29,7 @@ publish {
     repoName = 'Android-lib'//默认的仓库名称
     groupId = 'com.mengya'//jcenter上的路径
     artifactId = 'smsobserver'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.1.0'//版本号
     desc = 'a library for hook sms'
     website = 'https://github.com/MeDeity/SmsObserverForAndroid'
 }
